@@ -14,12 +14,9 @@ type Response struct {
 	Body       string            `json:"body,omitempty"`
 }
 
-func Main(in Request) (*Response, error) {
-	if in.Name == "" {
-		in.Name = "stranger"
-	}
+func Main(args map[string]interface{}) (*Response, error) {
 
 	return &Response{
-		Body: fmt.Sprintf("Hello %s", in.Name),
+		Body: fmt.Sprintf("%+v", args),
 	}, nil
 }
