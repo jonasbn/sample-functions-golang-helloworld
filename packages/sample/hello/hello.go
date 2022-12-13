@@ -15,8 +15,7 @@ type Response struct {
 }
 
 func Main(args map[string]interface{}) (*Response, error) {
-
 	return &Response{
-		Body: fmt.Sprintf("%#v", args["__ow_headers"]),
+		Body: fmt.Sprintf("%T", args["__ow_headers"]),
 	}, nil
 }
