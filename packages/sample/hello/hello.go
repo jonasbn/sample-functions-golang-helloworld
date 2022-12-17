@@ -27,6 +27,6 @@ func Main(args map[string]interface{}) (*Response, error) {
 	ip = val["do-connecting-ip"].(string)
 
 	return &Response{
-		Body: fmt.Sprintf("User-agent:%s\nIP:%s\n%s\n", userAgent, ip, val),
+		Body: fmt.Sprintf("User-agent:%s\nIP:%s\n", userAgent, ip),
 	}, nil
 }
