@@ -21,10 +21,7 @@ func Main(args map[string]interface{}) (*Response, error) {
 
 	m := args["__ow_headers"]
 
-	fmt.Printf("args type: %T", args)
-	fmt.Printf("__ow_headers type: %T", m)
-
 	return &Response{
-		Body: fmt.Sprintf("User-agent: %s\nIP: %s", userAgent, ip),
+		Body: fmt.Sprintf("User-agent: %s\nIP: %s, args type: %T, __ow_headers type: %T", userAgent, ip, args, m)
 	}, nil
 }
