@@ -20,7 +20,7 @@ func Main(args map[string]interface{}) (*Response, error) {
 	var ip string = ""
 	var userAgent string = ""
 
-	m := args["__ow_headers"]
+	//m := args["__ow_headers"]
 
 	for _, y := range args {
 		for _, z := range y.(interface{}).([]interface{}) {
