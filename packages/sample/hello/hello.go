@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 )
 
 type Request struct {
@@ -28,6 +29,10 @@ func Main(args map[string]interface{}) (*Response, error) {
 		}
 	}
 
+	log.Printf("ip %s", ip)
+	log.Printf("user-agent %s", userAgent)
+
 	return &Response{
-		Body: fmt.Sprintf("User-agent:%s\nIP:%s\nargs type:%T\now_headers type: %T\n", userAgent, ip, args, m)}, nil
+		Body: fmt.Sprintf("User-agent:%s\nIP:%s\n", userAgent, ip),
+	}, nil
 }
